@@ -1,0 +1,309 @@
+:root {
+  font-family: "Comic Sans MS", "Baloo 2", "Trebuchet MS", sans-serif;
+  color: #2d1e2f;
+  background-color: #fffaf2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #fff6d1 0%, #ffe8f0 50%, #dff4ff 100%);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  border-bottom: 4px solid #ffc1dc;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand__icon {
+  font-size: 2.5rem;
+  background: #ffe8a6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.brand p {
+  margin: 0.2rem 0 0;
+  font-size: 1rem;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.8rem;
+  flex: 1 1 420px;
+}
+
+.scoreboard div {
+  background: #fff6ff;
+  border-radius: 1rem;
+  padding: 0.6rem 0.8rem;
+  text-align: center;
+  border: 2px solid #ffb8d5;
+}
+
+.scoreboard span {
+  display: block;
+  font-size: 0.85rem;
+  color: #7a4766;
+}
+
+.scoreboard strong {
+  font-size: 1.3rem;
+}
+
+.game-stage {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.game-area {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #dff7ff 0%, #fef5ff 35%, #fef8e1 60%, #b5f0a0 100%);
+}
+
+.fruit {
+  position: absolute;
+  width: 110px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  border-radius: 1.3rem;
+  background: #fffaf8;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid #ffcc7a;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+.fruit img {
+  width: 70px;
+  height: 70px;
+}
+
+.fruit span {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #62324f;
+}
+
+.fruit--sliced {
+  transform: translate(-50%, -50%) scale(1.2) rotate(-8deg);
+  opacity: 0.4;
+}
+
+.slice-trail {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.slice-dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 134, 161, 0.7);
+  box-shadow: 0 0 12px rgba(255, 134, 161, 0.8);
+  transform: translate(-50%, -50%);
+  animation: fade 0.6s ease forwards;
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.8);
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+}
+
+.overlay--hidden {
+  display: none;
+}
+
+.overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 244, 248, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.overlay__content {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 1.8rem;
+  padding: 2rem;
+  width: min(920px, 90vw);
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.2);
+  border: 4px solid #ffb6d5;
+}
+
+.overlay__content--small {
+  width: min(520px, 90vw);
+  text-align: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 1.5rem;
+  border: 4px solid #ffd5a6;
+}
+
+.hero__label {
+  background: #ffeef6;
+  padding: 1rem 1.4rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.panel-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.panel {
+  border: none;
+  background: #fff8d6;
+  border-radius: 1.5rem;
+  padding: 1.4rem;
+  text-align: center;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 24px rgba(0, 0, 0, 0.2);
+}
+
+.panel__icon {
+  font-size: 2rem;
+}
+
+.instructions {
+  text-align: left;
+  padding-left: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.leaderboard {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+}
+
+.leaderboard li {
+  background: #ffeefb;
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.primary,
+.ghost {
+  border: none;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #ff77a8;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(255, 119, 168, 0.4);
+}
+
+.ghost {
+  background: #fff1f7;
+  color: #8d5172;
+}
+
+.name-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.name-input input {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 2px solid #ffb6d5;
+  width: 100%;
+  text-align: center;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .scoreboard {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+
+  .fruit {
+    width: 90px;
+    height: 110px;
+  }
+}
