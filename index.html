@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoo-Ninja</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <div class="brand">
+          <span class="brand__icon">🦁</span>
+          <div>
+            <h1>Zoo-Ninja</h1>
+            <p>Slice the right animals, save the zoo!</p>
+          </div>
+        </div>
+        <div class="scoreboard">
+          <div>
+            <span>Round</span>
+            <strong id="roundDisplay">1</strong>
+          </div>
+          <div>
+            <span>Target</span>
+            <strong id="categoryDisplay">Mammals</strong>
+          </div>
+          <div>
+            <span>Score</span>
+            <strong id="scoreDisplay">0</strong>
+          </div>
+          <div>
+            <span>Correct</span>
+            <strong id="correctDisplay">0</strong>
+          </div>
+          <div>
+            <span>Mistakes</span>
+            <strong id="mistakeDisplay">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="game-stage">
+        <div class="game-area" id="gameArea"></div>
+        <div class="slice-trail" id="sliceTrail"></div>
+      </main>
+    </div>
+
+    <section class="overlay" id="startScreen">
+      <div class="overlay__backdrop"></div>
+      <div class="overlay__content">
+        <div class="hero">
+          <img src="./assets/zoo-scene.svg" alt="Colorful zoo" />
+          <div class="hero__label">
+            <h2>Welcome to Zoo-Ninja!</h2>
+            <p>Pick the right animal category and slice with a swipe.</p>
+          </div>
+        </div>
+        <div class="panel-grid">
+          <button class="panel" id="startButton">
+            <span class="panel__icon">🎯</span>
+            <h3>Start</h3>
+            <p>Jump into your first round.</p>
+          </button>
+          <button class="panel" id="instructionsButton">
+            <span class="panel__icon">📜</span>
+            <h3>Instructions</h3>
+            <p>Learn how to slice like a ninja.</p>
+          </button>
+          <button class="panel" id="leaderboardButton">
+            <span class="panel__icon">🏆</span>
+            <h3>Leaderboard</h3>
+            <p>See the top zoo heroes.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="overlay overlay--hidden" id="instructionsScreen">
+      <div class="overlay__backdrop"></div>
+      <div class="overlay__content overlay__content--small">
+        <h2>How to Play</h2>
+        <ul class="instructions">
+          <li>Each round has a target category (like Birds or Reptiles).</li>
+          <li>Slice animals that belong to the target to earn 10 points.</li>
+          <li>Slice 3 wrong animals in a round and the game ends.</li>
+          <li>Each new round needs more correct slices to win.</li>
+          <li>Use your mouse or touch screen to swipe through animals.</li>
+        </ul>
+        <button class="primary" id="closeInstructions">Got it!</button>
+      </div>
+    </section>
+
+    <section class="overlay overlay--hidden" id="leaderboardScreen">
+      <div class="overlay__backdrop"></div>
+      <div class="overlay__content overlay__content--small">
+        <h2>Zoo Hall of Fame</h2>
+        <ol class="leaderboard" id="leaderboardList"></ol>
+        <button class="primary" id="closeLeaderboard">Back</button>
+      </div>
+    </section>
+
+    <section class="overlay overlay--hidden" id="roundScreen">
+      <div class="overlay__backdrop"></div>
+      <div class="overlay__content overlay__content--small">
+        <h2 id="roundTitle">Round Complete!</h2>
+        <p id="roundMessage"></p>
+        <button class="primary" id="nextRoundButton">Next Round</button>
+      </div>
+    </section>
+
+    <section class="overlay overlay--hidden" id="gameOverScreen">
+      <div class="overlay__backdrop"></div>
+      <div class="overlay__content overlay__content--small">
+        <h2>Game Over</h2>
+        <p id="gameOverMessage"></p>
+        <label class="name-input">
+          Your name
+          <input type="text" id="playerName" maxlength="12" placeholder="Zoo Hero" />
+        </label>
+        <div class="button-row">
+          <button class="primary" id="saveScoreButton">Save Score</button>
+          <button class="ghost" id="restartButton">Play Again</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
