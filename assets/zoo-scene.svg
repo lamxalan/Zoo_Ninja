@@ -1,0 +1,30 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500' viewBox='0 0 900 500'>
+  <defs>
+    <linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#a7e0ff'/>
+      <stop offset='100%' stop-color='#e7f8ff'/>
+    </linearGradient>
+    <linearGradient id='grass' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#91e071'/>
+      <stop offset='100%' stop-color='#43b047'/>
+    </linearGradient>
+  </defs>
+  <rect width='900' height='500' fill='url(#sky)' />
+  <circle cx='760' cy='90' r='50' fill='#ffe76a'/>
+  <rect y='330' width='900' height='170' fill='url(#grass)' />
+  <rect x='80' y='220' width='180' height='160' rx='20' fill='#ffd1a8' stroke='#ff9f68' stroke-width='6'/>
+  <rect x='120' y='150' width='100' height='90' rx='12' fill='#ff9f68'/>
+  <rect x='105' y='260' width='60' height='70' rx='10' fill='#fff2e3'/>
+  <rect x='185' y='260' width='60' height='70' rx='10' fill='#fff2e3'/>
+  <rect x='380' y='200' width='160' height='190' rx='20' fill='#ffe9a6' stroke='#f7c76b' stroke-width='6'/>
+  <rect x='420' y='140' width='80' height='80' rx='12' fill='#f7c76b'/>
+  <rect x='420' y='260' width='80' height='90' rx='12' fill='#fff6d9'/>
+  <rect x='640' y='220' width='190' height='170' rx='20' fill='#ffc6d6' stroke='#ff8fb4' stroke-width='6'/>
+  <rect x='670' y='170' width='130' height='70' rx='12' fill='#ff8fb4'/>
+  <rect x='690' y='260' width='90' height='90' rx='12' fill='#fff0f5'/>
+  <circle cx='300' cy='210' r='50' fill='#89d989'/>
+  <rect x='290' y='210' width='20' height='70' fill='#6b4a2b'/>
+  <circle cx='560' cy='230' r='60' fill='#7fd7ff'/>
+  <rect x='550' y='230' width='20' height='80' fill='#6b4a2b'/>
+  <path d='M0 330 Q120 310 240 330 T480 330 T720 330 T900 330 V500 H0 Z' fill='#60c76a'/>
+</svg>
